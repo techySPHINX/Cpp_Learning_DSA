@@ -118,8 +118,27 @@ Node *removekth(Node *head, int k)
     return head;
 }
 
+void deletenode(Node *temp) //by takig node only
+{
+    Node *back = temp->prev;
+    Node *front = temp->next;
 
-//better approach with considering all edge cases
+    if (front == NULL)
+    {
+        back->next = nullptr;
+        temp->prev = nullptr;
+        free(temp);
+        return;
+    }
+
+    back->next = front;
+    front->prev = back;
+
+    temp->next = temp->prev = nullptr;
+    delete(temp);
+}
+
+// better approach with considering all edge cases
 Node *removekthano(Node *head, int k)
 {
     if (head == NULL)
@@ -155,8 +174,8 @@ Node *removekthano(Node *head, int k)
         back->next = front;
         front->prev = back;
 
-        knode -> next =nullptr;
-        knode -> prev =nullptr;
+        knode->next = nullptr;
+        knode->prev = nullptr;
         delete knode;
         return head;
     }
@@ -168,7 +187,7 @@ int main()
     Node *head = convertArr2DLL(arr);
     printlist(head);
     std::cout << std::endl;
-    head = removekthano(head,2);
+    head = removekthano(head, 2);
     printlist(head);
     return 0;
 }
