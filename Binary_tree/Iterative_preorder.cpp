@@ -31,7 +31,7 @@ public:
         {
             root = s.top();
             s.pop();
-            preorder.push_back(root -> val);
+            preOrder.push_back(root -> val);
             if(root -> right ! = NULL) {
                 s.push(root -> right);
             }
