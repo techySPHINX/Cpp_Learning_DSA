@@ -35,12 +35,15 @@ public:
             {
                 s.push(node);
                 node = node->left;
-            }else{
-                if(s.empty() == true) break;
+            }
+            else
+            {
+                if (s.empty() == true)
+                    break;
                 node = s.top();
                 s.pop();
-                inorder.push_back(node -> val);
-                node = node -> right;
+                inorder.push_back(node->val);
+                node = node->right;
             }
         }
         return inorder;
