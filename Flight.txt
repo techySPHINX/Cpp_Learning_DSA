@@ -1,0 +1,5 @@
+Flight Details
+Flight No. Destination Departure Seats
+F101 Bhubaneswar Delhi 50
+F102 Hyderabad Mumbai 40
+F103 Bangalore Noida 2
